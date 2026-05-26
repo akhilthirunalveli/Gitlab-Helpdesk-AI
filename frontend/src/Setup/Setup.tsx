@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowLeft02Icon, GithubIcon } from 'hugeicons-react'
+import { ArrowLeft02Icon } from 'hugeicons-react'
 import '../Docs/Docs.css'
 
 const CodeBlock = ({ code }: { code: string }) => {

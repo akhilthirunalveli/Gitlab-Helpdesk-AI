@@ -109,7 +109,7 @@ const MessageSources = ({ sources }: { sources: { title: string; url: string }[]
         title={`${sources.length} sources`}
       >
         <span className="sources-label">Sources</span>
-        {sources.slice(0, 3).map((s, i) => (
+        {sources.slice(0, 3).map((_, i) => (
           <div key={i} className="source-circle" style={{ zIndex: 3 - i }}>
             {i + 1}
           </div>
