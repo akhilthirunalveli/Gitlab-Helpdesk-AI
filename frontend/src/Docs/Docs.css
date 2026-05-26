@@ -1,0 +1,220 @@
+.docs-page {
+  width: 100%;
+  min-height: 100vh;
+  /* Dim dotted pattern background */
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  font-family: var(--font-sans);
+}
+
+.docs-content-wrapper {
+  padding: 80px 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.docs-container {
+  max-width: 860px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Hide the old top glow effect */
+.docs-container::before {
+  display: none;
+}
+
+.docs-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  transition: all var(--duration-fast) var(--ease);
+}
+
+.docs-back-link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.docs-header {
+  margin-bottom: 48px;
+}
+
+.docs-header h1 {
+  font-family: var(--font-sans);
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.docs-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.docs-section {
+  margin-bottom: 48px;
+}
+
+.docs-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.docs-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.docs-section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+
+.docs-section li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.docs-section li::before {
+  content: "→";
+  color: #7852ee;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+.docs-section code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 5px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.docs-section strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.docs-mermaid-wrapper {
+  margin: 32px 0;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.mermaid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mermaid svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-width: 600px; /* Ensures it doesn't get too small */
+}
+
+/* Make mermaid text readable on dark */
+.mermaid text {
+  fill: #fff !important;
+  font-size: 16px !important;
+}
+
+/* Setup Page Styles */
+.setup-step {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.setup-step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.setup-step p {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.setup-step pre {
+  background: #111;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+
+.setup-step pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #a5b4fc;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .docs-container {
+    padding: 32px 24px;
+  }
+  
+  .docs-header h1 {
+    font-size: 32px;
+  }
+}
