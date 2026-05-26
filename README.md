@@ -1,48 +1,61 @@
 <div align="left">
-  <h1>GitLab Helpdesk AI</h1>
-  <p>A smart, fast, and production-ready RAG chatbot for GitLab's Handbook.</p>
 
-  <img src="frontend/public/Homepage-[Readme].png" alt="Homepage" width="800" />
-</div>
+# GitLab Helpdesk AI
+
+**A smart, fast, and production-ready RAG chatbot for GitLab's Handbook.**
+
+<img src="frontend/public/homepage.png" alt="Homepage" width="800" />
 
 <br />
 
-## Links
+[![Live Demo](https://img.shields.io/badge/🌍_Live_Demo-gitlabhelpdesk.vercel.app-blue?style=for-the-badge)](https://gitlabhelpdesk.vercel.app/)
+<br />
+[![Docs](https://img.shields.io/badge/📖_Docs-Engineering_Deep_Dive-green?style=for-the-badge)](https://gitlabhelpdesk.vercel.app/docs)
+<br />
+[![Video](https://img.shields.io/badge/🎥_Video-Demo_Walkthrough-red?style=for-the-badge)](https://gitlabhelpdesk.vercel.app/video)
+<br />
+[![Setup](https://img.shields.io/badge/⚙️_Setup-Local_Guide-orange?style=for-the-badge)](https://gitlabhelpdesk.vercel.app/setup)
 
-- **Check the site:** [/homepage](https://gitlabhelpdesk.vercel.app/)
-- **Explore how I made this application:** [/docs](https://gitlabhelpdesk.vercel.app/docs)
-- **Want to Setup this app locally? :** [/setup](https://gitlabhelpdesk.vercel.app/setup)
-- **I also Explained my working here:** [/video](https://gitlabhelpdesk.vercel.app/video)
----
 
-## 🛠️ Tech Stack
+</div>
 
-| Icon | Technology | Description |
+## Tech Stack
+
+| | Technology | Description |
 | :---: | :--- | :--- |
-| <img src="https://skillicons.dev/icons?i=react,vite" height="30" alt="React Vite" /> | **React + Vite** | High-performance frontend UI with dark mode and glassmorphism. |
-| <img src="https://skillicons.dev/icons?i=ts" height="30" alt="TypeScript" /> | **TypeScript** | Strongly typed frontend code for safety and scale. |
-| <img src="https://skillicons.dev/icons?i=fastapi" height="30" alt="FastAPI" /> | **FastAPI** | Python backend handling concurrent RAG logic and real-time SSE streaming. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24" aria-label="Gemini"><path d="M12 2c-.78 5.16-4.84 9.22-10 10 5.16.78 9.22 4.84 10 10 .78-5.16 4.84-9.22 10-10-5.16-.78-9.22-4.84-10-10"/></svg> | **Google Gemini** | Driven by the cutting-edge Gemini 2.5 Flash model for reasoning. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24" aria-label="ChromaDB"><path d="M12 2c-.78 5.16-4.84 9.22-10 10 5.16.78 9.22 4.84 10 10 .78-5.16 4.84-9.22 10-10-5.16-.78-9.22-4.84-10-10"/></svg> | **ChromaDB** | Local persistent vector database securely holding 900+ scraped GitLab handbook documents. |
-
+| ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) | **React + Vite** | High-performance frontend UI with dark mode and glassmorphism. |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) | **TypeScript** | Strongly typed frontend code for safety and scale. |
+| ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) | **FastAPI** | Python backend handling concurrent RAG logic and real-time SSE streaming. |
+| ![Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat&logo=google-gemini&logoColor=white) | **Google Gemini 2.5 Flash** | Cutting-edge LLM for reasoning, embeddings, and query classification. |
+| ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6F00?style=flat&logo=databricks&logoColor=white) | **ChromaDB** | Local persistent vector database holding 900+ scraped GitLab Handbook chunks. |
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) | **Python 3** | Backend runtime powering the RAG pipeline, scraper, and API layer. |
 
 
 ## Features
 
-- **Real-Time Streaming:** The AI types out its answers live (just like ChatGPT) via Server-Sent Events, drastically reducing perceived latency.
-- **Dynamic Context Windows:** Uses `tiktoken` to mathematically manage the LLM's memory, ensuring the app never crashes from "Token Limit Exceeded" errors during long chats.
-- **Persistent Sessions:** Your chat history is automatically saved to your browser (`localStorage`). If you refresh the page, your conversation is perfectly preserved.
-- **Graceful Degradation:** The backend automatically handles API rate limits (HTTP 429) using exponential backoff, and failing that, gently tells the user to try again instead of exposing raw JSON stack traces.
-- **Source Citations:** Instantly pulls deduplicated source references for every answer directly from the GitLab Handbook.
+- **Real-Time Streaming** — The AI types out its answers live (just like ChatGPT) via Server-Sent Events, drastically reducing perceived latency.
+- **Dynamic Context Windows** — Uses `tiktoken` to mathematically manage the LLM's memory, so the app never crashes from "Token Limit Exceeded" errors during long chats.
+- **Persistent Sessions** — Your chat history is automatically saved to your browser (`localStorage`). Refresh the page and your conversation is still there.
+- **Graceful Degradation** — The backend handles API rate limits (HTTP 429) with exponential backoff. If all retries fail, the user gets a friendly message instead of a raw stack trace.
+- **Source Citations** — Every answer includes deduplicated source links pulled directly from the GitLab Handbook.
 
 
+
+## Screenshots
+
+<div align="center">
+  <img src="frontend/public/chatbot-view.png" alt="Chatbot View" width="100%" />
+  <br /><br />
+  <img src="frontend/public/chat-example.png" alt="Chat Example" width="100%" />
+</div>
+
+---
 
 ## Local Setup
 
-It's very easy to run this project locally. You will need to start both the **Backend** and the **Frontend** in two separate terminal windows.
+You will need two terminal windows — one for the **Backend** and one for the **Frontend**.
 
 ### 1. Start the Backend (Python)
-Open your first terminal window and run:
 
 ```bash
 cd backend
@@ -51,23 +64,17 @@ source venv/bin/activate
 pip install -r requirements.txt
 uvicorn api.main:app --reload
 ```
-*(The backend will now be running on http://127.0.0.1:8000)*
+
+> Backend will be running on **http://127.0.0.1:8000**
 
 ### 2. Start the Frontend (React)
-Open a **new**, second terminal window and run:
 
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-*(The frontend will now be running on http://localhost:5173)*
 
-Open your browser, go to `http://localhost:5173`, and start chatting with Gia!
-## Screenshots
+> Frontend will be running on **http://localhost:5173**
 
-<div align="center">
-  <img src="frontend/public/ChatbotView-[Readme].png" alt="Chatbot View" width="100%" />
-  &nbsp;
-  <img src="frontend/public/ChatExample-[Readme].png" alt="Chat Example" width="100%" />
-</div>
+Open your browser, go to `http://localhost:5173`, and start chatting with **Gia**!
