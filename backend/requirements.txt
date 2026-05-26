@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+google-genai
+chromadb
+beautifulsoup4
+requests
+lxml
+langchain
+langchain-text-splitters
+python-dotenv
+pydantic
+tiktoken
+pysqlite3-binary
+tiktoken
+pysqlite3-binary
