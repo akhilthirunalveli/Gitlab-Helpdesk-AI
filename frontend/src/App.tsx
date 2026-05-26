@@ -21,7 +21,7 @@ type Mode = 'landing' | 'chat'
    ──────────────────────────────────────────── */
 const uid = () => Math.random().toString(36).slice(2, 10)
 
-const API_BASE = import.meta.env.DEV ? 'http://localhost:8000' : ''
+const API_BASE = import.meta.env.DEV ? 'http://localhost:8000' : 'https://gitlab-helpdesk-backend.onrender.com'
 
 /** Renders very basic markdown: **bold**, `code`, newlines, lists */
 function renderMarkdown(text: string) {
