@@ -1,0 +1,61 @@
+# Environments
+.env
+backend/venv
+backend/.env/
+.venv/
+env.bak/
+venv.bak/
+frontend/node_modules/
+
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# -------------------------------------------------------------
+# HOSTING NOTE:
+# We are explicitly NOT ignoring the `backend/data/` directory 
+# because it contains the compiled ChromaDB database. When you 
+# host your application on Vercel/Render, the host will need 
+# this folder to run the RAG chatbot without rebuilding it.
+# -------------------------------------------------------------
+# backend/data/
