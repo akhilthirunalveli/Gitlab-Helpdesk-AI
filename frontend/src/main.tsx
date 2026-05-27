@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import Docs from './Docs/Docs.tsx'
 import Setup from './Setup/Setup.tsx'
+import Video from './Video/Video.tsx'
 
 function Router() {
   const [path, setPath] = useState(window.location.pathname)
@@ -16,6 +17,7 @@ function Router() {
 
   if (path === '/docs') return <Docs />
   if (path === '/setup') return <Setup />
+  if (path === '/video') return <Video />
   return <App />
 }
 

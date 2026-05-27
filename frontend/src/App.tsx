@@ -418,7 +418,11 @@ function App() {
                 Docs
                 <ArrowUpRight01Icon size={14} />
               </a>
-              <a href="#" className="landing-link">
+              <a href="/video" className="landing-link" onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState({}, '', '/video');
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}>
                 Video
                 <ArrowUpRight01Icon size={14} />
               </a>
